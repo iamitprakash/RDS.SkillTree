@@ -4,6 +4,6 @@ namespace RDS.SkillTree.Repository.Interface
 {
     public interface ISkillRepository
     {
-        public Task<List<Skill>> GetAll();
+        public List<Skill> GetAll();
     }
 }

@@ -1,0 +1,6 @@
+@RDS.SkillTree_HostAddress = http://localhost:5076
+
+GET {{RDS.SkillTree_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

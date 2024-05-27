@@ -35,8 +35,15 @@ namespace RDS.SkillTree.Controllers
         [ProducesDefaultResponseType(typeof(Skill))]
         public ActionResult<Skill> GetAllSkillById(int Id, bool includeDeleted)
         {
-
-            return Ok(new Skill());
+            var res = _skillService.GetSkillsById(Id);
+            if (res == null)
+            {
+                return NoContent();
+            }
+            else
+            {
+                return Ok(res);
+            }
 
         }
     }

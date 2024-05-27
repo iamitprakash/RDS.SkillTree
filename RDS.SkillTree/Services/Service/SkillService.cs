@@ -16,5 +16,10 @@ namespace RDS.SkillTree.Services.Repository
         {
             return  _skillRepository.GetAll();
         }
+        
+        public Skill? GetSkillsById(int Id)
+        {
+            return _skillRepository.GetSkillsById(Id);
+        }
     }
 }

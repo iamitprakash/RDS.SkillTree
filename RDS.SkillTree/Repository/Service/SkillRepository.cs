@@ -10,6 +10,11 @@ namespace RDS.SkillTree.Repository.Service
             return mockData();
         }
 
+        public Skill? GetSkillsById(int Id)
+        {
+           var data= mockData();
+            return data!.Where(x => x.Id == Id).FirstOrDefault();
+        }
 
         public List<Skill> mockData()
         {

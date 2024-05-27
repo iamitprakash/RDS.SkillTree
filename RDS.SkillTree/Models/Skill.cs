@@ -5,7 +5,7 @@ namespace RDS.SkillTree.Models;
 
 public partial class Skill
 {
-    public byte[] Id { get; set; } = null!;
+    public int Id { get; set; } 
 
     public DateTime? CreatedAt { get; set; }
 
@@ -17,15 +17,9 @@ public partial class Skill
 
     public string SkillType { get; set; } = null!;
 
-    public byte[]? CreatedBy { get; set; }
+    public string CreatedBy { get; set; }
 
-    public byte[]? UpdatedBy { get; set; }
+    public string  UpdatedBy { get; set; }
 
-    public virtual User? CreatedByNavigation { get; set; }
-
-    public virtual ICollection<Endorsement> Endorsements { get; set; } = new List<Endorsement>();
-
-    public virtual User? UpdatedByNavigation { get; set; }
-
-    public virtual ICollection<User> Users { get; set; } = new List<User>();
+   
 }

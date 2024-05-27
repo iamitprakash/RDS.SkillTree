@@ -4,6 +4,6 @@ namespace RDS.SkillTree.Services.Interface
 {
     public interface ISkillService
     {
-        public Task<List<Skill>> GetSkills();
+        public List<Skill> GetSkills();
     }
 }

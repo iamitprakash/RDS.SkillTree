@@ -12,7 +12,7 @@ namespace RDS.SkillTree.Services.Repository
         {
             _skillRepository = skillRepository;       
         }
-        public Task<List<Skill>> GetSkills()
+        public List<Skill> GetSkills()
         {
             return  _skillRepository.GetAll();
         }

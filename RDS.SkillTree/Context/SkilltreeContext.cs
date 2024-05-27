@@ -77,9 +77,9 @@ public partial class SkilltreeContext : DbContext
                 .HasForeignKey(d => d.CreatedBy)
                 .HasConstraintName("FK3sf16mlcqdyg1onb1jc6mxeio");
 
-            entity.HasOne(d => d.Skill).WithMany(p => p.Endorsements)
-                .HasForeignKey(d => d.SkillId)
-                .HasConstraintName("FKjuhgii7d9bdgjke3oj23bekjr");
+            //entity.HasOne(d => d.Skill).WithMany(p => p.Endorsements)
+            //    .HasForeignKey(d => d.SkillId)
+            //    .HasConstraintName("FKjuhgii7d9bdgjke3oj23bekjr");
 
             entity.HasOne(d => d.UpdatedByNavigation).WithMany(p => p.EndorsementUpdatedByNavigations)
                 .HasForeignKey(d => d.UpdatedBy)
@@ -199,13 +199,13 @@ public partial class SkilltreeContext : DbContext
                 .IsFixedLength()
                 .HasColumnName("updated_by");
 
-            entity.HasOne(d => d.CreatedByNavigation).WithMany(p => p.SkillCreatedByNavigations)
-                .HasForeignKey(d => d.CreatedBy)
-                .HasConstraintName("FKk9ihlls00bo5ljvdgnsgf7r5w");
+            //entity.HasOne(d => d.CreatedByNavigation).WithMany(p => p.SkillCreatedByNavigations)
+            //    .HasForeignKey(d => d.CreatedBy)
+            //    .HasConstraintName("FKk9ihlls00bo5ljvdgnsgf7r5w");
 
-            entity.HasOne(d => d.UpdatedByNavigation).WithMany(p => p.SkillUpdatedByNavigations)
-                .HasForeignKey(d => d.UpdatedBy)
-                .HasConstraintName("FKga0cp46ei9oe50sknbkty2xh7");
+            //entity.HasOne(d => d.UpdatedByNavigation).WithMany(p => p.SkillUpdatedByNavigations)
+            //    .HasForeignKey(d => d.UpdatedBy)
+            //    .HasConstraintName("FKga0cp46ei9oe50sknbkty2xh7");
         });
 
         modelBuilder.Entity<User>(entity =>
@@ -271,30 +271,30 @@ public partial class SkilltreeContext : DbContext
                 .HasForeignKey(d => d.UpdatedBy)
                 .HasConstraintName("FKci7xr690rvyv3bnfappbyh8x0");
 
-            entity.HasMany(d => d.Skills).WithMany(p => p.Users)
-                .UsingEntity<Dictionary<string, object>>(
-                    "UserSkill",
-                    r => r.HasOne<Skill>().WithMany()
-                        .HasForeignKey("SkillId")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FKj53flyds4vknyh8llw5d7jdop"),
-                    l => l.HasOne<User>().WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FKc2o84wspod5se9pa8lxmhig0q"),
-                    j =>
-                    {
-                        j.HasKey("UserId", "SkillId").HasName("PK__user_ski__36059F3886DEC3C5");
-                        j.ToTable("user_skill");
-                        j.IndexerProperty<byte[]>("UserId")
-                            .HasMaxLength(16)
-                            .IsFixedLength()
-                            .HasColumnName("user_id");
-                        j.IndexerProperty<byte[]>("SkillId")
-                            .HasMaxLength(16)
-                            .IsFixedLength()
-                            .HasColumnName("skill_id");
-                    });
+            //entity.HasMany(d => d.Skills).WithMany(p => p.Users)
+            //    .UsingEntity<Dictionary<string, object>>(
+            //        "UserSkill",
+            //        r => r.HasOne<Skill>().WithMany()
+            //            .HasForeignKey("SkillId")
+            //            .OnDelete(DeleteBehavior.ClientSetNull)
+            //            .HasConstraintName("FKj53flyds4vknyh8llw5d7jdop"),
+            //        l => l.HasOne<User>().WithMany()
+            //            .HasForeignKey("UserId")
+            //            .OnDelete(DeleteBehavior.ClientSetNull)
+            //            .HasConstraintName("FKc2o84wspod5se9pa8lxmhig0q"),
+            //        j =>
+            //        {
+            //            j.HasKey("UserId", "SkillId").HasName("PK__user_ski__36059F3886DEC3C5");
+            //            j.ToTable("user_skill");
+            //            j.IndexerProperty<byte[]>("UserId")
+            //                .HasMaxLength(16)
+            //                .IsFixedLength()
+            //                .HasColumnName("user_id");
+            //            j.IndexerProperty<byte[]>("SkillId")
+            //                .HasMaxLength(16)
+            //                .IsFixedLength()
+            //                .HasColumnName("skill_id");
+            //        });
         });
 
         OnModelCreatingPartial(modelBuilder);

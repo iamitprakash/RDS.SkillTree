@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RDS.SkillTree.Models;
 
-namespace RDS.SkillTree.test;
+namespace RDS.SkillTree.Context;
 
 public partial class SkilltreeContext : DbContext
 {

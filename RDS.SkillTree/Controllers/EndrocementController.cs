@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using RDS.SkillTree.Models;
 using RDS.SkillTree.Services.Interface;
-using System.Net;
 
 namespace RDS.SkillTree.Controllers
 {

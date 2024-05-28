@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace RDS.SkillTree.Models;
+﻿namespace RDS.SkillTree.Models;
 
 public partial class EndorsementList
 {
-    public byte[] Id { get; set; } = null!;
+    public int Id { get; set; }
 
     public DateTime? CreatedAt { get; set; }
 
@@ -17,19 +14,15 @@ public partial class EndorsementList
 
     public string Type { get; set; } = null!;
 
-    public byte[]? CreatedBy { get; set; }
+    public string? CreatedBy { get; set; }
 
-    public byte[]? UpdatedBy { get; set; }
+    public string? UpdatedBy { get; set; }
 
-    public byte[]? EndorsementId { get; set; }
+    public int? EndorsementId { get; set; }
 
-    public byte[]? UserId { get; set; }
-
-    public virtual User? CreatedByNavigation { get; set; }
+    public int? UserId { get; set; }
 
     public virtual Endorsement? Endorsement { get; set; }
-
-    public virtual User? UpdatedByNavigation { get; set; }
 
     public virtual User? User { get; set; }
 }

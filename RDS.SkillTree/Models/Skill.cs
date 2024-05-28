@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace RDS.SkillTree.Models;
+﻿namespace RDS.SkillTree.Models;
 
 public partial class Skill
 {
-    public int Id { get; set; } 
+    public int Id { get; set; }
 
     public DateTime? CreatedAt { get; set; }
 
@@ -17,9 +14,11 @@ public partial class Skill
 
     public string SkillType { get; set; } = null!;
 
-    public string CreatedBy { get; set; }
+    public string? CreatedBy { get; set; }
 
-    public string  UpdatedBy { get; set; }
+    public string? UpdatedBy { get; set; }
 
-   
+    public virtual ICollection<Endorsement> Endorsements { get; set; } = new List<Endorsement>();
+
+    public virtual ICollection<UserSkill> UserSkills { get; set; } = new List<UserSkill>();
 }

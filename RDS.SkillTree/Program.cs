@@ -3,6 +3,7 @@ using RDS.SkillTree.Repository.Interface;
 using RDS.SkillTree.Repository.Service;
 using RDS.SkillTree.Services.Interface;
 using RDS.SkillTree.Services.Repository;
+using RDS.SkillTree.Services.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,10 +13,17 @@ builder.AddServiceDefaults();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+#region
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ISkillRepository,SkillRepository>();
 builder.Services.AddScoped<ISkillService, SkillService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+#endregion
+
 builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
    .AddNegotiate();
 
